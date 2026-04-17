@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank MCQ - Question 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <!-- Light/Dark mode toggle (Pure CSS) -->
+        <input type="checkbox" id="theme-toggle" class="theme-toggle-input" hidden>
+        <label for="theme-toggle" class="theme-toggle" title="Toggle dark mode">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="icon" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            Dark Mode
+        </label>
+    <div class="container">
+        <div class="progress-bar" aria-label="Quiz Progress">
+            <span class="progress-bar-fill" style="width:100%"></span>
+        </div>
+        <h2><span class="icon" aria-hidden="true">&#128161;</span> Question 3</h2>
+        <div class="welcome-message">
+            <p class="question">What is the primary purpose of a credit score?</p>
+        </div>
+
+
+
+        <!-- HTML/CSS-only feedback message on submit -->
+        <input type="checkbox" id="show-message" class="hidden-toggle" style="display:none;">
+        <form onsubmit="document.getElementById('show-message').checked=true; return false;">
+            <div class="question-block">
+                <label class="correct"><input type="radio" name="q3"> To determine loan eligibility</label><br>
+                                <label class="correct"><input type="radio" name="q3"> To determine loan eligibility
+                                    <span class="explanation">Correct! Credit scores are primarily used by lenders to determine loan eligibility.</span>
+                                </label><br>
+                                <label class="incorrect"><input type="radio" name="q3"> To calculate interest rates</label><br>
+                                <label class="incorrect"><input type="radio" name="q3"> To track spending habits</label>
+            </div>
+            <hr class="divider" aria-hidden="true">
+            <button type="submit" class="button">Submit</button>
+        </form>
+        <div class="hidden-message">Your quiz is completed!</div>
+    <style>
+    /* Show the message when the checkbox is checked */
+    #show-message:checked ~ .hidden-message {
+        display: block;
+    }
+    .hidden-message {
+        display: none;
+        margin-top: 16px;
+        padding: 12px;
+        background: #e0ffe0;
+        border: 1px solid #4caf50;
+        color: #256029;
+        border-radius: 6px;
+        font-weight: bold;
+        text-align: center;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    </style>
+
+
+        <nav class="navbar-fixed" style="margin-top: 32px;">
+            <a href="index.html" data-tooltip="Go to Home">🏠 Home</a> |
+            <a href="question1.html" data-tooltip="Go to Question 1">Q1</a> |
+            <a href="question2.html" data-tooltip="Go to Question 2">Q2</a> |
+            <a href="question3.html" class="active" data-tooltip="Go to Question 3">Q3</a>
+        </nav>
+    </div>
+</body>
+</html>

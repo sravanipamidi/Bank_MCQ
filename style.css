@@ -1,0 +1,459 @@
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        padding: 10px;
+    }
+    .container, .main-content, .question-box, .result-box {
+        width: 100% !important;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    nav, .navbar, .navigation {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    button, input[type="submit"], .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    h1, h2, h3 {
+        font-size: 1.5em;
+    }
+    img, video {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    h1, h2, h3 {
+        font-size: 1.2em;
+    }
+    .container, .main-content, .question-box, .result-box {
+        padding: 5px;
+    }
+}
+/* Highlight correct/incorrect answers after selection */
+input[type="radio"]:checked + .correct,
+input[type="radio"]:checked + label.correct,
+label.correct input[type="radio"]:checked + span,
+label.correct input[type="radio"]:checked {
+    background: #d4edda;
+    color: #256029;
+    border-radius: 6px;
+    font-weight: bold;
+}
+input[type="radio"]:checked + .incorrect,
+input[type="radio"]:checked + label.incorrect,
+label.incorrect input[type="radio"]:checked + span,
+label.incorrect input[type="radio"]:checked {
+    background: #f8d7da;
+    color: #842029;
+    border-radius: 6px;
+    font-weight: bold;
+}
+/* Highlight both correct and incorrect answers when any option is selected */
+.question-block input[type="radio"]:checked ~ label.correct,
+.question-block input[type="radio"]:checked ~ label.incorrect {
+    opacity: 1;
+}
+.question-block label.correct:has(input[type="radio"]:checked),
+.question-block input[type="radio"]:checked ~ label.correct {
+    background: #d4edda;
+    color: #256029;
+    border-radius: 6px;
+    font-weight: bold;
+}
+.question-block label.incorrect:has(input[type="radio"]:checked),
+.question-block input[type="radio"]:checked ~ label.incorrect {
+    background: #f8d7da;
+    color: #842029;
+    border-radius: 6px;
+    font-weight: bold;
+}
+/* Ensure text is white in dark mode for quiz content */
+body:has(.theme-toggle-input:checked) .question-block,
+body:has(.theme-toggle-input:checked) .welcome-message,
+body:has(.theme-toggle-input:checked) .question,
+body:has(.theme-toggle-input:checked) label,
+body:has(.theme-toggle-input:checked) p,
+body:has(.theme-toggle-input:checked) h2 {
+    color: #fff;
+}
+/* Light/Dark mode toggle (Pure CSS) */
+.theme-toggle {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-size: 1em;
+}
+.theme-toggle-input {
+    display: none;
+}
+
+/* Apply dark mode styles when checked */
+body {
+    transition: background 0.3s, color 0.3s;
+}
+.theme-toggle-input:checked ~ .theme-toggle,
+.theme-toggle-input:checked ~ .container,
+.theme-toggle-input:checked ~ nav,
+.theme-toggle-input:checked ~ .navbar-fixed,
+.theme-toggle-input:checked ~ .navbar-bottom,
+.theme-toggle-input:checked ~ .navbar-top {
+    /* No effect, just for selector completeness */
+}
+.theme-toggle-input:checked ~ .container,
+.theme-toggle-input:checked ~ .navbar-fixed,
+.theme-toggle-input:checked ~ .navbar-bottom,
+.theme-toggle-input:checked ~ .navbar-top,
+.theme-toggle-input:checked ~ body {
+    /* No effect, body can't be selected this way */
+}
+/* Use :root for CSS variables if needed */
+body,
+body.light {
+    background: #f4f4f4;
+    color: #232526;
+}
+.theme-toggle-input:checked ~ .container,
+.theme-toggle-input:checked ~ .navbar-fixed,
+.theme-toggle-input:checked ~ .navbar-bottom,
+.theme-toggle-input:checked ~ .navbar-top {
+    /* No effect, see below for dark mode */
+}
+.theme-toggle-input:checked ~ .container {
+    /* No effect, see below for dark mode */
+}
+/* Dark mode styles using :has() if supported */
+body:has(.theme-toggle-input:checked) {
+    background: #232526;
+    color: #f4f4f4;
+}
+body:has(.theme-toggle-input:checked) .container {
+    background: #232526;
+    color: #f4f4f4;
+    border-color: #6dd5fa;
+}
+body:has(.theme-toggle-input:checked) .navbar-fixed,
+body:has(.theme-toggle-input:checked) .navbar-bottom,
+body:has(.theme-toggle-input:checked) .navbar-top {
+    background: #232526;
+    border-color: #444;
+}
+body:has(.theme-toggle-input:checked) .navbar-fixed a,
+body:has(.theme-toggle-input:checked) .navbar-bottom a,
+body:has(.theme-toggle-input:checked) .navbar-top a {
+    color: #6dd5fa;
+}
+body:has(.theme-toggle-input:checked) .navbar-fixed a.active,
+body:has(.theme-toggle-input:checked) .navbar-bottom a.active,
+body:has(.theme-toggle-input:checked) .navbar-top a.active {
+    background: #6dd5fa;
+    color: #232526;
+}
+body:has(.theme-toggle-input:checked) .icon {
+    color: #6dd5fa;
+}
+
+body:has(.theme-toggle-input:checked) input[type="radio"],
+body:has(.theme-toggle-input:checked) input[type="checkbox"] {
+    accent-color: #6dd5fa;
+}
+/* Rectangle box for all main content */
+.container {
+    background: #fff;
+    border: 2px solid #3498db;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(52,152,219,0.10);
+    padding: 32px 28px;
+    margin: 36px auto 32px auto;
+    max-width: 600px;
+    min-width: 260px;
+}
+/* Rectangle box for question blocks */
+.question-block {
+    background: #fff;
+    border: 2px solid #3498db;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(52,152,219,0.08);
+    padding: 24px 20px;
+    /* No effect, see below for dark mode */
+}
+/* Dark mode styles using :has() if supported */
+body:has(.theme-toggle-input:checked) {
+    background: #232526;
+    color: #f4f4f4;
+}
+body:has(.theme-toggle-input:checked) .container {
+    background: #232526;
+    color: #f4f4f4;
+    border-color: #6dd5fa;
+}
+body:has(.theme-toggle-input:checked) .navbar-fixed,
+body:has(.theme-toggle-input:checked) .navbar-bottom,
+body:has(.theme-toggle-input:checked) .navbar-top {
+    background: #232526;
+    border-color: #444;
+}
+body:has(.theme-toggle-input:checked) .navbar-fixed a,
+body:has(.theme-toggle-input:checked) .navbar-bottom a,
+body:has(.theme-toggle-input:checked) .navbar-top a {
+    color: #6dd5fa;
+}
+body:has(.theme-toggle-input:checked) .navbar-fixed a.active,
+body:has(.theme-toggle-input:checked) .navbar-bottom a.active,
+body:has(.theme-toggle-input:checked) .navbar-top a.active {
+    background: #6dd5fa;
+    color: #232526;
+}
+body:has(.theme-toggle-input:checked) .icon {
+    color: #6dd5fa;
+}
+
+body:has(.theme-toggle-input:checked) input[type="radio"],
+body:has(.theme-toggle-input:checked) input[type="checkbox"] {
+    accent-color: #6dd5fa;
+}
+/* Dark mode override for .question-block background and border */
+body:has(.theme-toggle-input:checked) .question-block {
+    background: #232526;
+    border-color: #6dd5fa;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    .navbar-fixed a,
+    .navbar-bottom a,
+    .navbar-top a {
+        color: #3498db;
+        text-decoration: none;
+        margin: 0 10px;
+        font-weight: bold;
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        outline: none;
+        border-radius: 4px;
+        padding: 4px 12px;
+    }
+    .navbar-fixed a:hover,
+    .navbar-bottom a:hover,
+    .navbar-top a:hover,
+    .navbar-fixed a:focus,
+    .navbar-bottom a:focus,
+    .navbar-top a:focus {
+        text-decoration: underline;
+        background: #eaf6fb;
+        color: #217dbb;
+        box-shadow: 0 0 0 3px #b3e0fa;
+    }
+    .navbar-fixed a.active,
+    .navbar-bottom a.active,
+    .navbar-top a.active,
+    .navbar-fixed a:active,
+    .navbar-bottom a:active,
+    .navbar-top a:active {
+        color: #fff;
+        background: #3498db;
+        box-shadow: 0 0 0 3px #3498db44;
+    }
+    body.dark .navbar-fixed a,
+    body.dark .navbar-bottom a,
+    body.dark .navbar-top a {
+        color: #6dd5fa;
+    }
+    body.dark .navbar-fixed a.active,
+    body.dark .navbar-bottom a.active,
+    body.dark .navbar-top a.active,
+    body.dark .navbar-fixed a:active,
+    body.dark .navbar-bottom a:active,
+    body.dark .navbar-top a:active {
+        background: #6dd5fa;
+        color: #232526;
+        box-shadow: 0 0 0 3px #6dd5fa66;
+    }
+    z-index: 1000;
+}
+.navbar-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+    text-align: center;
+    z-index: 1000;
+}
+body.dark .navbar-fixed,
+body.dark .navbar-bottom {
+    background: #232526;
+    border-top: 1px solid #444;
+}
+body.dark .navbar-top {
+    background: #232526;
+    border-bottom: 1px solid #444;
+}
+.navbar-fixed a,
+.navbar-bottom a,
+.navbar-top a {
+    color: #3498db;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s;
+}
+.navbar-fixed a:hover,
+.navbar-bottom a:hover,
+.navbar-top a:hover {
+    text-decoration: underline;
+    background: #eaf6fb;
+    color: #217dbb;
+    border-radius: 4px;
+}
+.navbar-fixed a.active,
+.navbar-bottom a.active,
+.navbar-top a.active {
+    color: #fff;
+    background: #3498db;
+    border-radius: 4px;
+    padding: 4px 12px;
+}
+body.dark .navbar-fixed {
+    background: #232526;
+    border-bottom: 1px solid #444;
+}
+body.dark .navbar-fixed a {
+    color: #6dd5fa;
+}
+body.dark .navbar-fixed a.active,
+body.dark .navbar-bottom a.active,
+body.dark .navbar-top a.active {
+    background: #6dd5fa;
+    color: #232526;
+}
+.icon {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    vertical-align: middle;
+    margin-right: 6px;
+    color: #3498db;
+}
+body.dark .icon {
+    color: #6dd5fa;
+}
+.question-block {
+    margin-bottom: 20px;
+}
+.question {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+input[type="radio"], input[type="checkbox"] {
+    accent-color: #3498db;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+body:has(.theme-toggle-input:checked) input[type="radio"],
+body:has(.theme-toggle-input:checked) input[type="checkbox"] {
+    accent-color: #6dd5fa;
+}
+.button, button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+.button:hover, button:hover {
+    background: #2980b9;
+}
+.hidden-message {
+    display: none;
+    text-align: center;
+    color: #27ae60;
+    font-size: 18px;
+    margin-top: 20px;
+}
+.hidden-toggle:checked ~ #submitted-message {
+    display: block;
+}
+@media (max-width: 700px) {
+    .container {
+        max-width: 95%;
+        padding: 10px;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    .question {
+        font-size: 1em;
+    }
+    button {
+        font-size: 1em;
+        padding: 8px;
+    }
+}
+}
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+.question-block {
+    margin-bottom: 20px;
+}
+.question {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+button:hover {
+    background: #2980b9;
+}
+
+/* Show explanation when answer is selected */
+label input[type="radio"]:checked ~ .explanation {
+  display: block;
+}
+.explanation {
+  display: none;
+  margin: 8px 0 0 28px;
+  padding: 8px 12px;
+  background: #f0f8ff;
+  border-left: 3px solid #3498db;
+  border-radius: 4px;
+  font-size: 0.98em;
+  color: #232526;
+}
