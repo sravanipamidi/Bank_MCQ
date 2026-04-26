@@ -23,18 +23,44 @@
             <label class="incorrect"><input type="radio" name="q5"> Credit Card Statement</label>
         </div>
         <hr class="divider" aria-hidden="true">
-
-            <div style="text-align:center; margin: 24px 0;">
-                <button onclick="document.getElementById('quiz-submit-message').style.display='block'; this.disabled=true;" class="submit-btn">Submit</button>
-                <div id="quiz-submit-message" style="display:none; margin-top:16px; color:green; font-weight:bold;">Your Quiz Is Submitted.</div>
-            </div>
-        <nav class="navbar-fixed" style="margin-top: 32px;">
+        <div class="question-block">
+            <p class="question">Which of the following is a type of electronic banking?</p>
+            <label class="correct"><input type="radio" name="q5b"> Internet Banking
+                <span class="explanation">Correct! Internet Banking is a type of electronic banking.</span>
+            </label><br>
+            <label class="incorrect"><input type="radio" name="q5b"> Passbook Entry</label><br>
+            <label class="incorrect"><input type="radio" name="q5b"> Cheque Book Request</label>
+        </div>
+        <hr class="divider" aria-hidden="true">
+        <div class="question-block">
+            <p class="question">What is the main benefit of a recurring deposit account?</p>
+            <label class="correct"><input type="radio" name="q5c"> Regular savings with fixed interest
+                <span class="explanation">Correct! Recurring deposit accounts help in regular savings with fixed interest.</span>
+            </label><br>
+            <label class="incorrect"><input type="radio" name="q5c"> Unlimited withdrawals</label><br>
+            <label class="incorrect"><input type="radio" name="q5c"> No minimum deposit</label>
+        </div>
+        <hr class="divider" aria-hidden="true">
+        <div class="question-block">
+            <p class="question">Which of the following is a credit facility?</p>
+            <label class="correct"><input type="radio" name="q5d"> Overdraft
+                <span class="explanation">Correct! Overdraft is a credit facility provided by banks.</span>
+            </label><br>
+            <label class="incorrect"><input type="radio" name="q5d"> Fixed Deposit</label><br>
+            <label class="incorrect"><input type="radio" name="q5d"> Savings Account</label>
+        </div>
+        <hr class="divider" aria-hidden="true">
+        <div style="text-align:center; margin: 24px 0;">
+            <button onclick="document.getElementById('quiz-submit-message').style.display='block'; this.disabled=true;" class="submit-btn">Submit</button>
+            <div id="quiz-submit-message" style="display:none; margin-top:16px; color:green; font-weight:bold;">Your Quiz Is Submitted.</div>
+        </div>
+        <nav class="navbar-fixed">
             <a href="index.html" data-tooltip="Go to Home">🏠 Home</a> |
-            <a href="question1.html" data-tooltip="Go to Question 1">Q1</a> |
-            <a href="question2.html" data-tooltip="Go to Question 2">Q2</a> |
-            <a href="question3.html" data-tooltip="Go to Question 3">Q3</a> |
-            <a href="question4.html" data-tooltip="Go to Question 4">Q4</a> |
-            <a href="question5.html" class="active" data-tooltip="Go to Question 5">Q5</a>
+            <a href="question1.html" data-tooltip="Go to Page 1">Page 1</a> |
+            <a href="question2.html" data-tooltip="Go to Page 2">Page 2</a> |
+            <a href="question3.html" data-tooltip="Go to Page 3">Page 3</a> |
+            <a href="question4.html" data-tooltip="Go to Page 4">Page 4</a> |
+            <a href="question5.html" class="active" data-tooltip="Go to Page 5">Page 5</a>
         </nav>
     </div>
 </body>
