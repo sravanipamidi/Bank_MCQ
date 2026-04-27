@@ -7,13 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <!-- Light/Dark mode toggle (Pure CSS) -->
+    <input type="checkbox" id="theme-toggle" class="theme-toggle-input" hidden>
+    <label for="theme-toggle" class="theme-toggle" title="Toggle dark mode">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="icon" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        Dark Mode
+    </label>
+    <div class="container" style="border:2px solid #3498db; border-radius:16px; box-shadow:0 4px 16px rgba(52,152,219,0.10);">
+        <style> .container { margin: 36px auto 32px auto !important; } </style>
         <div class="progress-bar" aria-label="Quiz Progress">
             <span class="progress-bar-fill" style="width:80%"></span>
         </div>
         <h2><span class="icon" aria-hidden="true">&#128161;</span> Question 4</h2>
         <div class="welcome-message">
-            <p class="question">What does 'NEFT' stand for in banking?</p>
+            <p class="question"><strong>13.</strong> What does 'NEFT' stand for in banking?</p>
         </div>
         <div class="question-block">
             <label class="incorrect"><input type="radio" name="q4"> National Electronic Fund Transfer</label><br>
@@ -24,7 +34,7 @@
         </div>
         <hr class="divider" aria-hidden="true">
         <div class="question-block">
-            <p class="question">Which of the following is a scheduled commercial bank in India?</p>
+            <p class="question"><strong>14.</strong> Which of the following is a scheduled commercial bank in India?</p>
             <label class="correct"><input type="radio" name="q4b"> HDFC Bank
                 <span class="explanation">Correct! HDFC Bank is a scheduled commercial bank in India.</span>
             </label><br>
@@ -33,7 +43,7 @@
         </div>
         <hr class="divider" aria-hidden="true">
         <div class="question-block">
-            <p class="question">What is the main function of a bank's savings account?</p>
+            <p class="question"><strong>15.</strong> What is the main function of a bank's savings account?</p>
             <label class="correct"><input type="radio" name="q4c"> To encourage saving habits among people
                 <span class="explanation">Correct! Savings accounts encourage saving habits and provide interest.</span>
             </label><br>
@@ -42,7 +52,7 @@
         </div>
         <hr class="divider" aria-hidden="true">
         <div class="question-block">
-            <p class="question">Which of the following is a central bank?</p>
+            <p class="question"><strong>16.</strong> Which of the following is a central bank?</p>
             <label class="correct"><input type="radio" name="q4d"> Reserve Bank of India
                 <span class="explanation">Correct! The Reserve Bank of India is the central bank of India.</span>
             </label><br>
@@ -50,14 +60,12 @@
             <label class="incorrect"><input type="radio" name="q4d"> Axis Bank</label>
         </div>
         <nav class="navbar-fixed">
-            <a href="index.html" data-tooltip="Go to Home">🏠 Home</a> |
-            <a href="question1.html" data-tooltip="Go to Page 1">Page 1</a> |
-            <a href="question2.html" data-tooltip="Go to Page 2">Page 2</a> |
-            <a href="question3.html" data-tooltip="Go to Page 3">Page 3</a> |
-            <a href="question4.html" class="active" data-tooltip="Go to Page 4">Page 4</a> |
-            <a href="question5.html" data-tooltip="Go to Page 5">Page 5</a>
-        </nav>
-    </div>
+            <a href="index.html">Home</a>
+            <a href="question1.html">Page 1</a>
+            <a href="question2.html">Page 2</a>
+            <a href="question3.html">Page 3</a>
+            <a href="question4.html" class="active">Page 4</a>
+            <a href="question5.html">Page 5</a>
         </nav>
     </div>
 </body>

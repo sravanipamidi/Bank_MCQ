@@ -7,22 +7,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <!-- Light/Dark mode toggle (Pure CSS) -->
-        <input type="checkbox" id="theme-toggle" class="theme-toggle-input" hidden>
-        <label for="theme-toggle" class="theme-toggle" title="Toggle dark mode">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="icon" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
-                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2"/>
-            </svg>
-            Dark Mode
-        </label>
-    <div class="container">
+    <!-- Light/Dark mode toggle (Pure CSS) -->
+    <input type="checkbox" id="theme-toggle" class="theme-toggle-input" hidden>
+    <label for="theme-toggle" class="theme-toggle" title="Toggle dark mode">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="icon" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        Dark Mode
+    </label>
+    <div class="container" style="border:2px solid #3498db; border-radius:16px; box-shadow:0 4px 16px rgba(52,152,219,0.10);">
+        <style>
+            .container {
+                margin: 36px auto 32px auto !important;
+                display: flex;
+                flex-direction: column;
+                min-height: 700px;
+            }
+        </style>
         <div class="progress-bar" aria-label="Quiz Progress">
             <span class="progress-bar-fill" style="width:33%"></span>
         </div>
         <h2><span class="icon" aria-hidden="true">&#128161;</span> Question 1</h2>
         <div class="welcome-message">
-            <p class="question">What does ATM stand for?</p>
+            <p class="question"><strong>1.</strong> What does ATM stand for?</p>
         </div>
         <div class="question-block">
         <label class="correct"><input type="radio" name="q1"> Automated Teller Machine
@@ -30,43 +38,44 @@
         </label><br>
         <label class="incorrect"><input type="radio" name="q1"> Automatic Transaction Machine</label><br>
         <label class="incorrect"><input type="radio" name="q1"> Account Transfer Mechanism</label>
-</div>
-<hr class="divider" aria-hidden="true">
-<div class="question-block">
-    <p class="question">Which is a function of the Reserve Bank of India (RBI)?</p>
-    <label class="correct"><input type="radio" name="q1b"> Issuing currency notes
-        <span class="explanation">Correct! The RBI is responsible for issuing currency notes in India.</span>
-    </label><br>
-    <label class="incorrect"><input type="radio" name="q1b"> Providing insurance to depositors</label><br>
-    <label class="incorrect"><input type="radio" name="q1b"> Granting loans to the public</label>
-</div>
-<hr class="divider" aria-hidden="true">
-<div class="question-block">
-    <p class="question">What is the full form of IFSC?</p>
-    <label class="correct"><input type="radio" name="q1c"> Indian Financial System Code
-        <span class="explanation">Correct! IFSC stands for Indian Financial System Code, used for electronic payment applications.</span>
-    </label><br>
-    <label class="incorrect"><input type="radio" name="q1c"> International Fund Settlement Code</label><br>
-    <label class="incorrect"><input type="radio" name="q1c"> Indian Fund Security Code</label>
-</div>
-<hr class="divider" aria-hidden="true">
-<div class="question-block">
-    <p class="question">Which of the following is a negotiable instrument?</p>
-    <label class="correct"><input type="radio" name="q1d"> Cheque
-        <span class="explanation">Correct! A cheque is a negotiable instrument.</span>
-    </label><br>
-    <label class="incorrect"><input type="radio" name="q1d"> Fixed Deposit Receipt</label><br>
-    <label class="incorrect"><input type="radio" name="q1d"> Savings Account Passbook</label>
-</div>
-<hr class="divider" aria-hidden="true">
-            <nav class="navbar-fixed" style="margin-top: 32px;">
-                <a href="index.html" data-tooltip="Go to Home">🏠 Home</a> |
-                <a href="question1.html" class="active" data-tooltip="Go to Page 1">Page 1</a> |
-                <a href="question2.html" data-tooltip="Go to Page 2">Page 2</a> |
-                <a href="question3.html" data-tooltip="Go to Page 3">Page 3</a> |
-                <a href="question4.html" data-tooltip="Go to Page 4">Page 4</a> |
-                <a href="question5.html" data-tooltip="Go to Page 5">Page 5</a>
-            </nav>
+        </div>
+        <hr class="divider" aria-hidden="true">
+        <div class="question-block">
+            <p class="question"><strong>2.</strong> Which is a function of the Reserve Bank of India (RBI)?</p>
+            <label class="correct"><input type="radio" name="q1b"> Issuing currency notes
+                <span class="explanation">Correct! The RBI is responsible for issuing currency notes in India.</span>
+            </label><br>
+            <label class="incorrect"><input type="radio" name="q1b"> Providing insurance to depositors</label><br>
+            <label class="incorrect"><input type="radio" name="q1b"> Granting loans to the public</label>
+        </div>
+        <hr class="divider" aria-hidden="true">
+        <div class="question-block">
+            <p class="question"><strong>3.</strong> What is the full form of IFSC?</p>
+            <label class="correct"><input type="radio" name="q1c"> Indian Financial System Code
+                <span class="explanation">Correct! IFSC stands for Indian Financial System Code, used for electronic payment applications.</span>
+            </label><br>
+            <label class="incorrect"><input type="radio" name="q1c"> International Fund Settlement Code</label><br>
+            <label class="incorrect"><input type="radio" name="q1c"> Indian Fund Security Code</label>
+        </div>
+        <hr class="divider" aria-hidden="true">
+        <div class="question-block">
+            <p class="question"><strong>4.</strong> Which of the following is a negotiable instrument?</p>
+            <label class="correct"><input type="radio" name="q1d"> Cheque
+                <span class="explanation">Correct! A cheque is a negotiable instrument.</span>
+            </label><br>
+            <label class="incorrect"><input type="radio" name="q1d"> Fixed Deposit Receipt</label><br>
+            <label class="incorrect"><input type="radio" name="q1d"> Savings Account Passbook</label>
+        </div>
+        <hr class="divider" aria-hidden="true">
+        <div style="flex:1 0 auto;"></div>
+        <nav class="navbar-fixed" style="margin-top:auto; margin-bottom:0;">
+            <a href="index.html">Home</a>
+            <a href="question1.html" class="active">Page 1</a>
+            <a href="question2.html">Page 2</a>
+            <a href="question3.html">Page 3</a>
+            <a href="question4.html">Page 4</a>
+            <a href="question5.html">Page 5</a>
+        </nav>
     </div>
 </body>
 </html>

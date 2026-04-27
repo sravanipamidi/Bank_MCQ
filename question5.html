@@ -7,13 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <!-- Light/Dark mode toggle (Pure CSS) -->
+    <input type="checkbox" id="theme-toggle" class="theme-toggle-input" hidden>
+    <label for="theme-toggle" class="theme-toggle" title="Toggle dark mode">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="icon" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        Dark Mode
+    </label>
+    <div class="container" style="border:2px solid #3498db; border-radius:16px; box-shadow:0 4px 16px rgba(52,152,219,0.10);">
+        <style> .container { margin: 36px auto 32px auto !important; } </style>
         <div class="progress-bar" aria-label="Quiz Progress">
             <span class="progress-bar-fill" style="width:100%"></span>
         </div>
         <h2><span class="icon" aria-hidden="true">&#128161;</span> Question 5</h2>
         <div class="welcome-message">
-            <p class="question">Which document is required to open a bank account?</p>
+            <p class="question"><strong>17.</strong> Which document is required to open a bank account?</p>
         </div>
         <div class="question-block">
             <label class="incorrect"><input type="radio" name="q5"> Electricity Bill</label><br>
@@ -24,7 +34,7 @@
         </div>
         <hr class="divider" aria-hidden="true">
         <div class="question-block">
-            <p class="question">Which of the following is a type of electronic banking?</p>
+            <p class="question"><strong>18.</strong> Which of the following is a type of electronic banking?</p>
             <label class="correct"><input type="radio" name="q5b"> Internet Banking
                 <span class="explanation">Correct! Internet Banking is a type of electronic banking.</span>
             </label><br>
@@ -33,7 +43,7 @@
         </div>
         <hr class="divider" aria-hidden="true">
         <div class="question-block">
-            <p class="question">What is the main benefit of a recurring deposit account?</p>
+            <p class="question"><strong>19.</strong> What is the main benefit of a recurring deposit account?</p>
             <label class="correct"><input type="radio" name="q5c"> Regular savings with fixed interest
                 <span class="explanation">Correct! Recurring deposit accounts help in regular savings with fixed interest.</span>
             </label><br>
@@ -42,25 +52,24 @@
         </div>
         <hr class="divider" aria-hidden="true">
         <div class="question-block">
-            <p class="question">Which of the following is a credit facility?</p>
+            <p class="question"><strong>20.</strong> Which of the following is a credit facility?</p>
             <label class="correct"><input type="radio" name="q5d"> Overdraft
                 <span class="explanation">Correct! Overdraft is a credit facility provided by banks.</span>
             </label><br>
             <label class="incorrect"><input type="radio" name="q5d"> Fixed Deposit</label><br>
             <label class="incorrect"><input type="radio" name="q5d"> Savings Account</label>
         </div>
-        <hr class="divider" aria-hidden="true">
         <div style="text-align:center; margin: 24px 0;">
             <button onclick="document.getElementById('quiz-submit-message').style.display='block'; this.disabled=true;" class="submit-btn">Submit</button>
             <div id="quiz-submit-message" style="display:none; margin-top:16px; color:green; font-weight:bold;">Your Quiz Is Submitted.</div>
         </div>
         <nav class="navbar-fixed">
-            <a href="index.html" data-tooltip="Go to Home">🏠 Home</a> |
-            <a href="question1.html" data-tooltip="Go to Page 1">Page 1</a> |
-            <a href="question2.html" data-tooltip="Go to Page 2">Page 2</a> |
-            <a href="question3.html" data-tooltip="Go to Page 3">Page 3</a> |
-            <a href="question4.html" data-tooltip="Go to Page 4">Page 4</a> |
-            <a href="question5.html" class="active" data-tooltip="Go to Page 5">Page 5</a>
+            <a href="index.html">Home</a>
+            <a href="question1.html">Page 1</a>
+            <a href="question2.html">Page 2</a>
+            <a href="question3.html">Page 3</a>
+            <a href="question4.html">Page 4</a>
+            <a href="question5.html" class="active">Page 5</a>
         </nav>
     </div>
 </body>

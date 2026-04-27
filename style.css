@@ -256,8 +256,12 @@ body:has(.theme-toggle-input:checked) input[type="checkbox"] {
     box-shadow: 0 4px 16px rgba(52,152,219,0.10);
     padding: 32px 28px;
     margin: 36px auto 32px auto;
-    max-width: 600px;
+    max-width: 900px;
     min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    min-height: 700px;
+    /* Removed fixed height and min-width for flexbox layout */
 }
 /* Rectangle box for question blocks */
 .question-block {
@@ -266,6 +270,10 @@ body:has(.theme-toggle-input:checked) input[type="checkbox"] {
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(52,152,219,0.08);
     padding: 24px 20px;
+    margin: 24px auto;
+    max-width: 700px;
+    width: 100%;
+    box-sizing: border-box;
     /* No effect, see below for dark mode */
 }
 /* Dark mode styles using :has() if supported */

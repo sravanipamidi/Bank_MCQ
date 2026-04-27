@@ -7,22 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <!-- Light/Dark mode toggle (Pure CSS) -->
-        <input type="checkbox" id="theme-toggle" class="theme-toggle-input" hidden>
-        <label for="theme-toggle" class="theme-toggle" title="Toggle dark mode">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="icon" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
-                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2"/>
-            </svg>
-            Dark Mode
-        </label>
-    <div class="container">
+    <!-- Light/Dark mode toggle (Pure CSS) -->
+    <input type="checkbox" id="theme-toggle" class="theme-toggle-input" hidden>
+    <label for="theme-toggle" class="theme-toggle" title="Toggle dark mode">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="icon" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        Dark Mode
+    </label>
+    <div class="container" style="border:2px solid #3498db; border-radius:16px; box-shadow:0 4px 16px rgba(52,152,219,0.10);">
+        <style> .container { margin: 36px auto 32px auto !important; } </style>
         <div class="progress-bar" aria-label="Quiz Progress">
             <span class="progress-bar-fill" style="width:66%"></span>
         </div>
         <h2><span class="icon" aria-hidden="true">&#128161;</span> Question 2</h2>
         <div class="welcome-message">
-            <p class="question">Which of the following is a type of bank account?</p>
+            <p class="question"><strong>5.</strong> Which of the following is a type of bank account?</p>
         </div>
         <div class="question-block">
                         <label class="correct"><input type="radio" name="q2"> Savings Account
@@ -30,42 +31,42 @@
                         </label><br>
                         <label class="incorrect"><input type="radio" name="q2"> Credit Account</label><br>
                         <label class="incorrect"><input type="radio" name="q2"> Investment Account</label>
-</div>
-<hr class="divider" aria-hidden="true">
-<div class="question-block">
-    <p class="question">Which of the following is a liability for a bank?</p>
-    <label class="correct"><input type="radio" name="q2b"> Deposits of customers
-        <span class="explanation">Correct! Deposits are liabilities for banks as they are owed to customers.</span>
-    </label><br>
-    <label class="incorrect"><input type="radio" name="q2b"> Loans given to customers</label><br>
-    <label class="incorrect"><input type="radio" name="q2b"> Investments in government bonds</label>
-</div>
-<hr class="divider" aria-hidden="true">
-<div class="question-block">
-    <p class="question">What does KYC stand for?</p>
-    <label class="correct"><input type="radio" name="q2c"> Know Your Customer
-        <span class="explanation">Correct! KYC stands for Know Your Customer, a process for verifying the identity of clients.</span>
-    </label><br>
-    <label class="incorrect"><input type="radio" name="q2c"> Know Your Credit</label><br>
-    <label class="incorrect"><input type="radio" name="q2c"> Keep Your Cash</label>
-</div>
-<hr class="divider" aria-hidden="true">
-<div class="question-block">
-    <p class="question">Which bank is known as the 'Banker to the Government' in India?</p>
-    <label class="correct"><input type="radio" name="q2d"> Reserve Bank of India
-        <span class="explanation">Correct! The Reserve Bank of India acts as the banker to the government.</span>
-    </label><br>
-    <label class="incorrect"><input type="radio" name="q2d"> State Bank of India</label><br>
-    <label class="incorrect"><input type="radio" name="q2d"> Punjab National Bank</label>
-</div>
-            <nav class="navbar-fixed" style="margin-top: 32px;">
-                <a href="index.html" data-tooltip="Go to Home">🏠 Home</a> |
-                <a href="question1.html" data-tooltip="Go to Page 1">Page 1</a> |
-                <a href="question2.html" class="active" data-tooltip="Go to Page 2">Page 2</a> |
-                <a href="question3.html" data-tooltip="Go to Page 3">Page 3</a> |
-                <a href="question4.html" data-tooltip="Go to Page 4">Page 4</a> |
-                <a href="question5.html" data-tooltip="Go to Page 5">Page 5</a>
-            </nav>
-            </div>
+        </div>
+        <hr class="divider" aria-hidden="true">
+        <div class="question-block">
+            <p class="question"><strong>6.</strong> Which of the following is a liability for a bank?</p>
+            <label class="correct"><input type="radio" name="q2b"> Deposits of customers
+                <span class="explanation">Correct! Deposits are liabilities for banks as they are owed to customers.</span>
+            </label><br>
+            <label class="incorrect"><input type="radio" name="q2b"> Loans given to customers</label><br>
+            <label class="incorrect"><input type="radio" name="q2b"> Investments in government bonds</label>
+        </div>
+        <hr class="divider" aria-hidden="true">
+        <div class="question-block">
+            <p class="question"><strong>7.</strong> What does KYC stand for?</p>
+            <label class="correct"><input type="radio" name="q2c"> Know Your Customer
+                <span class="explanation">Correct! KYC stands for Know Your Customer, a process for verifying the identity of clients.</span>
+            </label><br>
+            <label class="incorrect"><input type="radio" name="q2c"> Know Your Credit</label><br>
+            <label class="incorrect"><input type="radio" name="q2c"> Keep Your Cash</label>
+        </div>
+        <hr class="divider" aria-hidden="true">
+        <div class="question-block">
+            <p class="question"><strong>8.</strong> Which bank is known as the 'Banker to the Government' in India?</p>
+            <label class="correct"><input type="radio" name="q2d"> Reserve Bank of India
+                <span class="explanation">Correct! The Reserve Bank of India acts as the banker to the government.</span>
+            </label><br>
+            <label class="incorrect"><input type="radio" name="q2d"> State Bank of India</label><br>
+            <label class="incorrect"><input type="radio" name="q2d"> Punjab National Bank</label>
+        </div>
+        <nav class="navbar-fixed" style="margin-top: 32px;">
+            <a href="index.html">Home</a>
+            <a href="question1.html">Page 1</a>
+            <a href="question2.html" class="active">Page 2</a>
+            <a href="question3.html">Page 3</a>
+            <a href="question4.html">Page 4</a>
+            <a href="question5.html">Page 5</a>
+        </nav>
+    </div>
 </body>
 </html>
