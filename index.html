@@ -4,38 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bank MCQ Quiz</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20260428">
 </head>
 <body>
-        <!-- Light/Dark mode toggle (Pure CSS) -->
-        <input type="checkbox" id="theme-toggle" class="theme-toggle-input" hidden>
-        <label for="theme-toggle" class="theme-toggle" title="Toggle dark mode">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="icon" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
-                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2"/>
-            </svg>
-            Dark Mode
-        </label>
-    <div class="container" style="border:2px solid #3498db; border-radius:16px; box-shadow:0 4px 16px rgba(52,152,219,0.10);">
-        <h1><span class="icon" aria-hidden="true">&#128176;</span>Bank MCQ Quiz</h1>
-        <style> .container { margin: 36px auto 32px auto !important; } </style>
+    <div class="background-gradient"></div>
+    <div class="container home-container" style="margin-bottom: 24px;">
         <div class="welcome-message">
-            <h2><span class="icon" aria-hidden="true">&#128161;</span> Welcome to the Bank MCQ Quiz!</h2>
-            <p>
-                Test your knowledge of banking concepts and terms. Use the navigation below to start answering questions.
-            </p>
+            <h1><span class="icon" aria-hidden="true">&#128176;</span> Bank MCQ Quiz</h1>
+            <p class="subtitle">Test your banking knowledge with our interactive quiz!</p>
         </div>
-        <hr class="divider" aria-hidden="true">
-        <div class="instructions-box" style="background:#eaf6fb; border-left:4px solid #3498db; border-radius:8px; padding:18px 20px; margin-bottom:24px;">
-            <h3 style="margin-top:0; color:#217dbb;">How to Play</h3>
-            <ul style="margin:0 0 0 18px; padding:0; color:#232526;">
-                <li>Click on any page to start answering questions.</li>
-                <li>Select the correct answer for each question. Explanations will appear after you choose.</li>
-                <li>Use the navigation bar to move between pages.</li>
-                <li>Try to answer all questions for the best score!</li>
-                <li>Switch between light and dark mode using the toggle above.</li>
+        <form class="user-info-form" autocomplete="off">
+            <h2 class="form-title">Enter Your Details</h2>
+            <div class="form-group">
+                <label for="username">Name</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10" required>
+            </div>
+            <input type="submit" value="Start Quiz" class="btn-primary">
+        </form>
+    </div>
+    <div class="instructions-container">
+        <div class="instructions-box">
+            <h2 style="text-align:center; color:#3498db; font-size:1.2em; margin-bottom:1em;">How to Play</h2>
+            <ul>
+                <li>Read each question carefully and select the best answer.</li>
+                <li>Each question has only one correct answer.</li>
+                <li>Use the navigation bar at the bottom to move between questions.</li>
+                <li>Try to answer all questions to the best of your ability.</li>
+                <li>Good luck and have fun!</li>
             </ul>
         </div>
+    </div>
         <!-- Quiz questions removed from Home tab as requested -->
         <!-- Submit button and message removed from Home tab as requested -->
         <nav class="navbar-fixed" style="margin-top: 32px;">
