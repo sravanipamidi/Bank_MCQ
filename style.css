@@ -1,3 +1,179 @@
+/* Display each How to Attempt point in a single line with ellipsis if too long */
+.instructions-container ul li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: block;
+}
+/* Prevent awkward line breaks for first How to Attempt point, but allow wrapping within container */
+.no-break {
+    white-space: pre-line;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    display: inline;
+}
+/* Red asterisk for required fields */
+.required-star {
+    color: #e53935;
+    font-weight: bold;
+    margin-left: 2px;
+    font-size: 1.1em;
+}
+/* Avatar upload styles */
+.avatar-upload-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 18px;
+}
+.avatar-label {
+    font-weight: 600;
+    color: #217dbb;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+.avatar-preview {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #e3f2fd;
+    border: 2px dashed #b3e0fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 6px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+    position: relative;
+}
+.avatar-preview:hover {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px #3498db33;
+}
+.avatar-placeholder {
+    font-size: 2.2em;
+    color: #3498db;
+    font-weight: bold;
+}
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Animated Start Quiz button */
+.animated-start-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(90deg, #3498db 60%, #6dd5fa 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 0;
+    font-size: 1.08em;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 8px;
+    box-shadow: 0 2px 8px rgba(52,152,219,0.08);
+    transition: background 0.2s, transform 0.18s, box-shadow 0.18s;
+    position: relative;
+    overflow: hidden;
+}
+.animated-start-btn .btn-arrow {
+    display: inline-block;
+    font-size: 1.3em;
+    margin-left: 6px;
+    transition: transform 0.25s cubic-bezier(.4,2,.6,1);
+}
+.animated-start-btn:hover {
+    background: linear-gradient(90deg, #217dbb 60%, #3498db 100%);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 16px #3498db33;
+}
+.animated-start-btn:hover .btn-arrow {
+    transform: translateX(8px) scale(1.2);
+}
+/* Robust dark mode for quiz questions and options */
+body:has(.theme-toggle-input:checked) {
+    background: #181c1f !important;
+}
+body:has(.theme-toggle-input:checked) .question-block {
+    background: #23272b !important;
+    color: #f1f1f1 !important;
+    border-color: #444 !important;
+    box-shadow: 0 2px 16px #0004;
+}
+body:has(.theme-toggle-input:checked) label,
+body:has(.theme-toggle-input:checked) .option-label,
+body:has(.theme-toggle-input:checked) .question {
+    color: #f1f1f1 !important;
+    background: transparent !important;
+}
+body:has(.theme-toggle-input:checked) input[type="radio"]:not(:checked) + label,
+body:has(.theme-toggle-input:checked) input[type="radio"]:not(:checked) + .option-label {
+    color: #e0e0e0 !important;
+    background: #23272b !important;
+}
+body:has(.theme-toggle-input:checked) input[type="radio"]:checked + label.correct,
+body:has(.theme-toggle-input:checked) label.correct:has(input[type="radio"]:checked),
+body:has(.theme-toggle-input:checked) .question-block input[type="radio"]:checked ~ label.correct {
+    background: #295c36 !important;
+    color: #b6f7c1 !important;
+}
+body:has(.theme-toggle-input:checked) input[type="radio"]:checked + label.incorrect,
+body:has(.theme-toggle-input:checked) label.incorrect:has(input[type="radio"]:checked),
+body:has(.theme-toggle-input:checked) .question-block input[type="radio"]:checked ~ label.incorrect {
+    background: #6e2323 !important;
+    color: #ffd6d6 !important;
+}
+body:has(.theme-toggle-input:checked) .question-block input[type="radio"] {
+    accent-color: #3498db;
+}
+body:has(.theme-toggle-input:checked) .question-block input[type="radio"]:checked {
+    accent-color: #2ecc71;
+}
+body:has(.theme-toggle-input:checked) .question-block input[type="radio"]:focus + label {
+    outline: 2px solid #3498db;
+}
+body:has(.theme-toggle-input:checked) .question-block input[type="radio"] + label {
+    background: #23272b !important;
+    color: #f1f1f1 !important;
+}
+body:has(.theme-toggle-input:checked) .question-block input[type="radio"]:checked + label {
+    font-weight: bold;
+}
+body:has(.theme-toggle-input:checked) .question-block input[type="radio"]:disabled + label {
+    color: #888 !important;
+}
+/* Side by side layout for home form and instructions */
+.side-by-side-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 32px;
+    max-width: 1200px;
+    margin: 48px auto 0 auto;
+    width: 100%;
+}
+@media (max-width: 900px) {
+    .side-by-side-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        margin-top: 32px;
+    }
+    .instructions-container, .home-container {
+        max-width: 480px;
+        width: 100%;
+    }
+}
 /* Modern, visually appealing navbar */
 .navbar-fixed {
     display: flex;
@@ -44,15 +220,20 @@
 }
 /* Instructions container for home page */
 .instructions-container {
-    max-width: 420px;
-    margin: 0 auto 36px auto;
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(52,152,219,0.10);
-    padding: 28px 24px 18px 24px;
+    max-width: 1100px;
+    min-width: 340px;
+    margin-left: auto;
+    margin-right: 0;
+    background: linear-gradient(120deg, #e3f2fd 60%, #b3e5fc 100%);
+    border-radius: 22px;
+    box-shadow: 0 8px 32px 0 rgba(52,152,219,0.18), 0 1.5px 8px 0 #3498db22;
+    padding: 36px 80px 26px 80px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    border: 3.5px solid #3498db;
+    transition: box-shadow 0.2s, background 0.2s;
+    font-size: 1.5em;
 }
 /* Modern background gradient for home page */
 .background-gradient {
@@ -68,11 +249,12 @@
 /* Home page container tweaks */
 .home-container {
     max-width: 420px;
-    margin: 48px auto 0 auto;
+    margin: 12px auto 0 auto;
     background: #fff;
     border-radius: 18px;
     box-shadow: 0 6px 32px rgba(52,152,219,0.13);
-    padding: 36px 30px 32px 30px;
+    border: 3.5px solid #3498db;
+    padding: 2px 4px 2px 4px;
     display: flex;
     flex-direction: column;
     align-items: center;

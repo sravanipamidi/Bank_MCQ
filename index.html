@@ -4,42 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bank MCQ Quiz</title>
-    <link rel="stylesheet" href="style.css?v=20260428">
+    <link rel="stylesheet" href="style.css?v=20260429">
 </head>
 <body>
     <div class="background-gradient"></div>
-    <div class="container home-container" style="margin-bottom: 24px;">
-        <div class="welcome-message">
-            <h1><span class="icon" aria-hidden="true">&#128176;</span> Bank MCQ Quiz</h1>
-            <p class="subtitle">Test your banking knowledge with our interactive quiz!</p>
+    <div class="side-by-side-wrapper">
+        <div class="container home-container" style="margin-bottom: 0;">
+            <div class="welcome-message">
+                <h1><span class="icon" aria-hidden="true">&#128176;</span> Bank Quiz</h1>
+                <p class="subtitle">Test your banking knowledge with our interactive quiz!</p>
+            </div>
+            <form class="user-info-form" autocomplete="off" action="question1.html" method="get">
+                <h2 class="form-title">Enter Your Details</h2>
+                <div class="form-group">
+                    <label for="username">Name <span class="required-star">*</span></label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email ID <span class="required-star">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number <span class="required-star">*</span></label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10" required>
+                </div>
+                <button type="submit" class="btn-primary animated-start-btn" style="text-align:center; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:10px;">
+                    <span class="btn-text">Start Quiz</span>
+                    <span class="btn-arrow">&#10148;</span>
+                </button>
+            </form>
         </div>
-        <form class="user-info-form" autocomplete="off">
-            <h2 class="form-title">Enter Your Details</h2>
-            <div class="form-group">
-                <label for="username">Name</label>
-                <input type="text" id="username" name="username" required>
+        <div class="instructions-container">
+            <div class="instructions-box">
+                <h2 style="text-align:center; color:#3498db; font-size:1.2em; margin-bottom:1em;">How to Attempt</h2>
+                <ol>
+                    <li><span class="no-break">Read each question carefully and select the best answer.</span></li>
+                    <li>Each question has only one correct answer.</li>
+                    <li>Use the navigation bar at the bottom to move between questions.</li>
+                    <li>Try to answer all questions to the best of your ability.</li>
+                    <li>Good luck and have fun!</li>
+                </ol>
             </div>
-            <div class="form-group">
-                <label for="email">Email ID</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10" required>
-            </div>
-            <input type="submit" value="Start Quiz" class="btn-primary">
-        </form>
-    </div>
-    <div class="instructions-container">
-        <div class="instructions-box">
-            <h2 style="text-align:center; color:#3498db; font-size:1.2em; margin-bottom:1em;">How to Play</h2>
-            <ul>
-                <li>Read each question carefully and select the best answer.</li>
-                <li>Each question has only one correct answer.</li>
-                <li>Use the navigation bar at the bottom to move between questions.</li>
-                <li>Try to answer all questions to the best of your ability.</li>
-                <li>Good luck and have fun!</li>
-            </ul>
         </div>
     </div>
         <!-- Quiz questions removed from Home tab as requested -->
@@ -54,4 +59,5 @@
         </nav>
     </div>
 </body>
+
 </html>
