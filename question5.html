@@ -4,23 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bank Quiz</title>
-    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css">
+        <style>
+        :root {
+            --bg: #fff;
+            --fg: #222;
+            --container-bg: #f8faff;
+        }
+        [data-theme="dark"] {
+            --bg: #181c1f;
+            --fg: #f1f1f1;
+            --container-bg: #23272a;
+        }
+        body {
+            background: var(--bg) !important;
+            color: var(--fg) !important;
+        }
+        .container, .home-container, .instructions-box {
+            background: var(--container-bg) !important;
+            color: var(--fg) !important;
+        }
+        .navbar-fixed {
+            background: var(--container-bg) !important;
+        }
+        .btn-primary, .submit-btn {
+            color: var(--fg) !important;
+        }
+        </style>
+    <style>
+        /* Hide scrollbar for all browsers */
+        html, body {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;  /* IE and Edge */
+        }
+        html::-webkit-scrollbar, body::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+    </style>
 </head>
 <body>
-    <!-- Light/Dark mode toggle (Pure CSS) -->
-    <input type="checkbox" id="theme-toggle" class="theme-toggle-input" hidden>
-    <label for="theme-toggle" class="theme-toggle" title="Toggle dark mode">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="icon" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
-            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2"/>
-        </svg>
-        Dark Mode
-    </label>
+        <input type="checkbox" id="theme-toggle" style="display:none">
+        <label for="theme-toggle" style="position:fixed;top:16px;right:16px;z-index:1000;cursor:pointer;user-select:none;background:#3498db;color:#fff;padding:8px 16px;border-radius:20px;font-size:1em;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+            <span class="light-label">🌞</span>
+            <span class="dark-label" style="display:none;">🌙</span>
+            Dark Mode
+        </label>
+        <script>
+            const toggle = document.getElementById('theme-toggle');
+            const html = document.documentElement;
+            toggle.addEventListener('change', function() {
+                if (toggle.checked) {
+                    html.setAttribute('data-theme', 'dark');
+                    document.querySelector('.light-label').style.display = 'none';
+                    document.querySelector('.dark-label').style.display = '';
+                } else {
+                    html.removeAttribute('data-theme');
+                    document.querySelector('.light-label').style.display = '';
+                    document.querySelector('.dark-label').style.display = 'none';
+                }
+            });
+        </script>
+        <!-- No sidebar or instructions on this page -->
     <div class="container" style="border:2px solid #3498db; border-radius:16px; box-shadow:0 4px 16px rgba(52,152,219,0.10);">
 
         <div class="progress-bar" aria-label="Quiz Progress">
-            <span class="progress-bar-fill" style="width:100%"></span>
         </div>
+           <!-- Progress bar removed -->
         <h2><span class="icon" aria-hidden="true">&#128161;</span> </h2>
         <div class="question-block">
             <p class="question"><strong>17.</strong> Which document is required to open a bank account?</p>
@@ -30,7 +79,7 @@
             </label><br>
             <label class="incorrect"><input type="radio" name="q5"> Credit Card Statement</label>
         </div>
-        <hr class="divider" aria-hidden="true">
+        <!-- Divider removed -->
         <div class="question-block">
             <p class="question"><strong>18.</strong> Which of the following is a type of electronic banking?</p>
             <label class="correct"><input type="radio" name="q5b"> Internet Banking
@@ -39,7 +88,7 @@
             <label class="incorrect"><input type="radio" name="q5b"> Passbook Entry</label><br>
             <label class="incorrect"><input type="radio" name="q5b"> Cheque Book Request</label>
         </div>
-        <hr class="divider" aria-hidden="true">
+        <!-- Divider removed -->
         <div class="question-block">
             <p class="question"><strong>19.</strong> What is the main benefit of a recurring deposit account?</p>
             <label class="correct"><input type="radio" name="q5c"> Regular savings with fixed interest
@@ -48,7 +97,7 @@
             <label class="incorrect"><input type="radio" name="q5c"> Unlimited withdrawals</label><br>
             <label class="incorrect"><input type="radio" name="q5c"> No minimum deposit</label>
         </div>
-        <hr class="divider" aria-hidden="true">
+        <!-- Divider removed -->
         <div class="question-block">
             <p class="question"><strong>20.</strong> Which of the following is a credit facility?</p>
             <label class="correct"><input type="radio" name="q5d"> Overdraft
@@ -58,17 +107,89 @@
             <label class="incorrect"><input type="radio" name="q5d"> Savings Account</label>
         </div>
         <div style="text-align:center; margin: 24px 0;">
-            <button onclick="document.getElementById('quiz-submit-message').style.display='block'; this.disabled=true;" class="submit-btn">Submit</button>
+            <button id="submit-btn" class="submit-btn">Submit</button>
             <div id="quiz-submit-message" style="display:none; margin-top:16px; color:green; font-weight:bold;">Your Quiz Is Submitted.</div>
+            <div id="quiz-error-message" style="display:none; margin-top:16px; color:red; font-weight:bold;">Please answer all questions before submitting.</div>
+            <div id="quiz-score-message" style="display:none; margin-top:16px; color:#3498db; font-weight:bold; font-size:1.2em;"></div>
         </div>
-        <nav class="navbar-fixed">
-            <a href="index.html">Home</a>
-            <a href="question1.html">Page 1</a>
-            <a href="question2.html">Page 2</a>
-            <a href="question3.html">Page 3</a>
-            <a href="question4.html">Page 4</a>
-            <a href="question5.html" class="active">Page 5</a>
-        </nav>
+        <style>
+        .highlight-correct {
+            background: #e6ffe6 !important;
+            border-radius: 6px;
+            border: 2px solid #27ae60 !important;
+        }
+        .highlight-incorrect {
+            background: #ffeaea !important;
+            border-radius: 6px;
+            border: 2px solid #e74c3c !important;
+        }
+        </style>
+        <script>
+        document.getElementById('submit-btn').onclick = function() {
+            var questionNames = ['q5', 'q5b', 'q5c', 'q5d'];
+            var correctAnswers = {
+                'q5': 1,    // 0-based index of correct radio in order
+                'q5b': 0,
+                'q5c': 0,
+                'q5d': 0
+            };
+            var allAnswered = true;
+            var score = 0;
+            for (var i = 0; i < questionNames.length; i++) {
+                var radios = document.getElementsByName(questionNames[i]);
+                var answered = false;
+                var userAnswer = -1;
+                for (var j = 0; j < radios.length; j++) {
+                    radios[j].parentElement.classList.remove('highlight-correct', 'highlight-incorrect');
+                    if (radios[j].checked) {
+                        answered = true;
+                        userAnswer = j;
+                    }
+                }
+                if (!answered) {
+                    allAnswered = false;
+                    break;
+                }
+            }
+            if (allAnswered) {
+                // Show correct/incorrect highlights and calculate score
+                for (var i = 0; i < questionNames.length; i++) {
+                    var radios = document.getElementsByName(questionNames[i]);
+                    var userAnswer = -1;
+                    for (var j = 0; j < radios.length; j++) {
+                        if (radios[j].checked) userAnswer = j;
+                    }
+                    for (var j = 0; j < radios.length; j++) {
+                        if (j === correctAnswers[questionNames[i]]) {
+                            radios[j].parentElement.classList.add('highlight-correct');
+                        }
+                        if (userAnswer === j && userAnswer !== correctAnswers[questionNames[i]]) {
+                            radios[j].parentElement.classList.add('highlight-incorrect');
+                        }
+                    }
+                    if (userAnswer === correctAnswers[questionNames[i]]) score++;
+                }
+                document.getElementById('quiz-submit-message').style.display = 'block';
+                document.getElementById('quiz-error-message').style.display = 'none';
+                document.getElementById('quiz-score-message').style.display = 'block';
+                document.getElementById('quiz-score-message').textContent = 'Your Score: ' + score + ' / ' + questionNames.length;
+                this.disabled = true;
+            } else {
+                document.getElementById('quiz-error-message').style.display = 'block';
+                document.getElementById('quiz-submit-message').style.display = 'none';
+                document.getElementById('quiz-score-message').style.display = 'none';
+            }
+        };
+        </script>
+        <!-- Navigation bar removed as requested -->
     </div>
+    <nav class="navbar-fixed" style="margin-top: 32px;">
+        <a href="index.html"><span class="nav-icon" aria-hidden="true">🏠</span></a>
+        <a href="question1.html"><span class="nav-icon" aria-hidden="true">1️⃣</span></a>
+        <a href="question2.html"><span class="nav-icon" aria-hidden="true">2️⃣</span></a>
+        <a href="question3.html"><span class="nav-icon" aria-hidden="true">3️⃣</span></a>
+        <a href="question4.html"><span class="nav-icon" aria-hidden="true">4️⃣</span></a>
+        <a href="question5.html" class="active"><span class="nav-icon" aria-hidden="true">5️⃣</span></a>
+    </nav>
 </body>
 </html>

@@ -4,10 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Bank Quiz</title>
-    <link rel="stylesheet" href="style.css?v=20260429">
+        <link rel="stylesheet" href="style.css?v=20260429">
+        <style>
+        :root {
+            --bg: #fff;
+            --fg: #222;
+            --container-bg: #f8faff;
+        }
+        [data-theme="dark"] {
+            --bg: #181c1f;
+            --fg: #f1f1f1;
+            --container-bg: #23272a;
+        }
+        body {
+            background: var(--bg) !important;
+            color: var(--fg) !important;
+        }
+        .container, .home-container, .instructions-box {
+            background: var(--container-bg) !important;
+            color: var(--fg) !important;
+        }
+        .navbar-fixed {
+            background: var(--container-bg) !important;
+        }
+        .btn-primary, .submit-btn {
+            color: var(--fg) !important;
+        }
+        .background-gradient {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+            background: linear-gradient(135deg, #e3f0ff 0%, #f8faff 100%);
+            transition: background 0.3s;
+        }
+        [data-theme="dark"] .background-gradient {
+            background: linear-gradient(135deg, #23272a 0%, #181c1f 100%);
+        }
+        </style>
 </head>
 <body>
-    <div class="background-gradient"></div>
+        <input type="checkbox" id="theme-toggle" style="display:none">
+        <label for="theme-toggle" style="position:fixed;top:16px;right:16px;z-index:1000;cursor:pointer;user-select:none;background:#3498db;color:#fff;padding:8px 16px;border-radius:20px;font-size:1em;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+            <span class="light-label">🌞</span>
+            <span class="dark-label" style="display:none;">🌙</span>
+            Dark Mode
+        </label>
+        <script>
+            const toggle = document.getElementById('theme-toggle');
+            const html = document.documentElement;
+            toggle.addEventListener('change', function() {
+                if (toggle.checked) {
+                    html.setAttribute('data-theme', 'dark');
+                    document.querySelector('.light-label').style.display = 'none';
+                    document.querySelector('.dark-label').style.display = '';
+                } else {
+                    html.removeAttribute('data-theme');
+                    document.querySelector('.light-label').style.display = '';
+                    document.querySelector('.dark-label').style.display = 'none';
+                }
+            });
+        </script>
+        <div class="background-gradient"></div>
     <div class="side-by-side-wrapper">
         <div class="container home-container" style="margin-bottom: 0;">
             <div class="welcome-message">
@@ -50,12 +108,12 @@
         <!-- Quiz questions removed from Home tab as requested -->
         <!-- Submit button and message removed from Home tab as requested -->
         <nav class="navbar-fixed" style="margin-top: 32px;">
-            <a href="index.html" class="active">Home</a>
-            <a href="question1.html">Page 1</a>
-            <a href="question2.html">Page 2</a>
-            <a href="question3.html">Page 3</a>
-            <a href="question4.html">Page 4</a>
-            <a href="question5.html">Page 5</a>
+            <a href="index.html" class="active"><span class="nav-icon" aria-hidden="true">🏠</span></a>
+            <a href="question1.html"><span class="nav-icon" aria-hidden="true">1️⃣</span></a>
+            <a href="question2.html"><span class="nav-icon" aria-hidden="true">2️⃣</span></a>
+            <a href="question3.html"><span class="nav-icon" aria-hidden="true">3️⃣</span></a>
+            <a href="question4.html"><span class="nav-icon" aria-hidden="true">4️⃣</span></a>
+            <a href="question5.html"><span class="nav-icon" aria-hidden="true">5️⃣</span></a>
         </nav>
     </div>
 </body>

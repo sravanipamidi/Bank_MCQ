@@ -4,18 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bank Quiz</title>
-    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css">
+        <style>
+        :root {
+            --bg: #fff;
+            --fg: #222;
+            --container-bg: #f8faff;
+        }
+        [data-theme="dark"] {
+            --bg: #181c1f;
+            --fg: #f1f1f1;
+            --container-bg: #23272a;
+        }
+        body {
+            background: var(--bg) !important;
+            color: var(--fg) !important;
+        }
+        .container, .home-container, .instructions-box {
+            background: var(--container-bg) !important;
+            color: var(--fg) !important;
+        }
+        .navbar-fixed {
+            background: var(--container-bg) !important;
+        }
+        .btn-primary, .submit-btn {
+            color: var(--fg) !important;
+        }
+        </style>
 </head>
 <body>
-    <!-- Light/Dark mode toggle (Pure CSS) -->
-    <input type="checkbox" id="theme-toggle" class="theme-toggle-input" hidden>
-    <label for="theme-toggle" class="theme-toggle" title="Toggle dark mode">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="icon" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
-            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2"/>
-        </svg>
-        Dark Mode
-    </label>
+        <input type="checkbox" id="theme-toggle" style="display:none">
+        <label for="theme-toggle" style="position:fixed;top:16px;right:16px;z-index:1000;cursor:pointer;user-select:none;background:#3498db;color:#fff;padding:8px 16px;border-radius:20px;font-size:1em;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+            <span class="light-label">🌞</span>
+            <span class="dark-label" style="display:none;">🌙</span>
+            Dark Mode
+        </label>
+        <script>
+            const toggle = document.getElementById('theme-toggle');
+            const html = document.documentElement;
+            toggle.addEventListener('change', function() {
+                if (toggle.checked) {
+                    html.setAttribute('data-theme', 'dark');
+                    document.querySelector('.light-label').style.display = 'none';
+                    document.querySelector('.dark-label').style.display = '';
+                } else {
+                    html.removeAttribute('data-theme');
+                    document.querySelector('.light-label').style.display = '';
+                    document.querySelector('.dark-label').style.display = 'none';
+                }
+            });
+        </script>
+        <!-- No sidebar or instructions on this page -->
     <div class="container" style="border:2px solid #3498db; border-radius:16px; box-shadow:0 4px 16px rgba(52,152,219,0.10);">
 
         <div class="progress-bar" aria-label="Quiz Progress">
@@ -59,14 +98,15 @@
         </div>
         <hr class="divider" aria-hidden="true">
         <div style="flex:1 0 auto;"></div>
-        <nav class="navbar-fixed" style="margin-top:auto; margin-bottom:0;">
-            <a href="index.html">Home</a>
-            <a href="question1.html" class="active">Page 1</a>
-            <a href="question2.html">Page 2</a>
-            <a href="question3.html">Page 3</a>
-            <a href="question4.html">Page 4</a>
-            <a href="question5.html">Page 5</a>
-        </nav>
+    </div>
+    <nav class="navbar-fixed" style="margin-top: 32px;">
+        <a href="index.html"><span class="nav-icon" aria-hidden="true">🏠</span></a>
+        <a href="question1.html" class="active"><span class="nav-icon" aria-hidden="true">1️⃣</span></a>
+        <a href="question2.html"><span class="nav-icon" aria-hidden="true">2️⃣</span></a>
+        <a href="question3.html"><span class="nav-icon" aria-hidden="true">3️⃣</span></a>
+        <a href="question4.html"><span class="nav-icon" aria-hidden="true">4️⃣</span></a>
+        <a href="question5.html"><span class="nav-icon" aria-hidden="true">5️⃣</span></a>
+    </nav>
     </div>
 </body>
 </html>
