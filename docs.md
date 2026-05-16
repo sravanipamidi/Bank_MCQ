@@ -1,10 +1,6 @@
 # Bank MCQ Project Documentation
 
 ## Step 1: Project Initialization
-
-## Next Steps
-
-## Step 1: Project Initialization
  - All files and content cleared to start fresh.
 
 
